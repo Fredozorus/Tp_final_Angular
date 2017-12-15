@@ -3,24 +3,33 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { FridgeComponent } from './fridge/fridge/fridge.component';
-import { ReceiptsComponent } from './receipts/receipts.component';
+import { FridgeComponent } from './fridge/fridge.component';
+import { RecipesComponent } from './recipes/recipes.component';
 import { PlanningComponent } from './planning/planning.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { RecipesComponent } from './recipes/recipes.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {Routes} from '@angular/router';
+
+const AppRoutes: Routes = [
+  
+]
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FridgeComponent,
-    ReceiptsComponent,
+    RecipesComponent,
     PlanningComponent,
     ShoppingListComponent,
     RecipesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
