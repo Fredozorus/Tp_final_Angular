@@ -9,11 +9,16 @@ import { PlanningComponent } from './planning/planning.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
 import {Routes} from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
-const AppRoutes: Routes = [
-  
-]
+const appRoutes : Routes = [
+  { path: 'Frigo', component: FridgeComponent},
+  { path: 'Recettes',component: RecipesComponent },
+  { path: 'Planning', component : PlanningComponent},
+  { path: 'ShoppingListe', component : ShoppingListComponent},
+];
 
 
 @NgModule({
@@ -23,13 +28,15 @@ const AppRoutes: Routes = [
     RecipesComponent,
     PlanningComponent,
     ShoppingListComponent,
-    RecipesComponent
+    RecipesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
