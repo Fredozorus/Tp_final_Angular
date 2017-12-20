@@ -9,6 +9,11 @@ import { PlanningComponent } from './planning/planning.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {Routes} from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +41,9 @@ const appRoutes : Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

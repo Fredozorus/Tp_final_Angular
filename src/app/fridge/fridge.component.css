@@ -1,0 +1,10 @@
+mat-card {
+     margin : 20px;
+}
+mat-card-actions {
+    text-align: left;
+}
+
+mat-button{
+    width: 500px;
+}
