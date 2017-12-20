@@ -1,13 +1,14 @@
 header {
-   width: 100%;
-   background: #3367D6;
-   display: block;
-   margin: auto;
-   min-width: 1024px;
-   padding: auto;
+   background: #3F51B5;
+   display: flex;
    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
    font-family: Roboto;
-   height: 40px;
+   height:8%;
+   align-items: center;
+   padding-top: 8px;
+   padding-right: 16px;
+   padding-bottom: 8px;
+   padding-left: 16px;
    
 }
 
@@ -15,7 +16,7 @@ a {
     text-decoration: none;
     color : white;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
 
 }

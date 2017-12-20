@@ -3,8 +3,13 @@ mat-card {
 }
 mat-card-actions {
     text-align: left;
+    
 }
 
-mat-button{
-    width: 500px;
+.icones {
+    margin-left:75%;
+}
+
+p {
+    width : 10%;
 }
