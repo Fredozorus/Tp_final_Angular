@@ -1,15 +1,39 @@
 mat-card {
      margin : 20px;
 }
-mat-card-actions {
-    text-align: left;
-    
+.AddIngredientsCard{
+    width : 20%;
+    align-items:right;
 }
 
-.icones {
-    margin-left:75%;
+.AddIngredientsButton{
+    float: right;
 }
 
-p {
+.mat-mini-fab {
+    background-color:#3F51B5;
+    color: white; 
+}
+
+.buttonIngredients {
+    margin-left: 70%;
+}
+
+.ContentIngredients{
     width : 10%;
+}
+
+
+.AddIngredientsForm{
+    border: none;
+}
+
+.IngredientsCard{
+    width: 40%;
+    align-items: right;
+}
+
+.InfoIngredients{
+    font-size: 12px;
+    color: grey;
 }

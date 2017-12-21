@@ -1,83 +1,51 @@
-<mat-card>
-    <mat-card-title>Viandes</mat-card-title>
-    <mat-card-content>
-        <mat-list>
-            <mat-list-item>
-                <p>Boeuf</p>
-                <div class="icones">
-                    <button mat-button>
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
-            <mat-list-item>
-                <p> Poulet</p>
-                <div class="icones">
-                    <button mat-button>
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
-            <mat-list-item>
-                <p>Porc</p>
-                <div class="icones">
-                    <button mat-button>
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
+<div class="container" fxLayout fxlayout.xs="column" fxLayoutAlign="center" fxLayoutGape.xs="0">
+    <div class="item item-1" fxFlex="30%">
+        <mat-card>
+            <mat-card-title>Ajouter un ingrédient</mat-card-title>
+            <mat-card-content>
+                <div class="AddIngredientsForm">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Nom" [(ngModel)]="name">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Quantité" [(ngModel)]="quantity">
+                    </mat-form-field>
 
-            </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-</mat-card>
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Unité" [(ngModel)]="unit">
+                    </mat-form-field>
+                    <div class="AddIngredientsButton">
+                        <button mat-mini-fab mat (click)="AddIngredients()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 
-
-<mat-card>
-    <mat-card-title>Légumes</mat-card-title>
-    <mat-card-content>
-        <mat-list>
-            <mat-list-item>
-                <p>Haricots</p>
-                <div class="icones">
-                    <button mat-button>
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
-            <mat-list-item>
-                <p>Carottes</p>
-                <div class="icones">
-                    <button mat-button>
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
-            <mat-list-item>
-                <p>Choux</p>
-                <div class="icones">
-                    <button mat-button>
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-</mat-card>
+    <div class="Item item-2" fxFlex="70%" fxFlexOrder="2">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Ingrédients</mat-card-title>
+                <mat-list>
+                    <mat-list-item *ngFor="let ingredient of ingredients">
+                        <div class="ContentIngredients">
+                            <p>{{ingredient.name}}
+                                <span class="InfoIngredients"> {{ingredient.quantity}}{{ingredient.unit}}</span>
+                            </p>
+                        </div>
+                        <div class="buttonIngredients">
+                            <button mat-button>
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-button (click)="RemoveIngredients(ingredient)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

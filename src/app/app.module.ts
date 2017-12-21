@@ -8,15 +8,19 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { PlanningComponent } from './planning/planning.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 import {RouterModule} from '@angular/router';
 import {Routes} from '@angular/router';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { HeaderComponent } from './header/header.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes : Routes = [
   { path: 'Frigo', component: FridgeComponent},
@@ -40,10 +44,15 @@ const appRoutes : Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    FormsModule,
     MatCheckboxModule,
     MatListModule,
     MatCardModule,
     MatIconModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

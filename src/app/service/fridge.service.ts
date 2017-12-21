@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter} from '@angular/core';
 import { Ingredients } from '../models/ingredients';
-import { EventEmitter } from '@angular/core/src/event_emitter';
 import { Console } from '@angular/core/src/console';
 
 
@@ -8,10 +7,10 @@ import { Console } from '@angular/core/src/console';
 export class FridgeService {
 
   ingredients: Ingredients[] = [
-    { name: 'Choux', quantity: 120, unity: 'g' },
-    { name: 'Haricots', quantity: 300, unity: 'g' },
-    { name: 'Carottes', quantity: 180, unity: 'g' },
-    { name: 'Aubergine', quantity: 260, unity: 'g' },
+    { name: 'Choux', quantity: 120, unit: 'g' },
+    { name: 'Haricots', quantity: 300, unit: 'g' },
+    { name: 'Carottes', quantity: 180, unit: 'g' },
+    { name: 'Aubergine', quantity: 260, unit: 'g' },
 
   ];
 
