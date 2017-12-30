@@ -10,7 +10,6 @@
                     <mat-form-field>
                         <input matInput type="text" placeholder="Quantité" [(ngModel)]="quantity">
                     </mat-form-field>
-
                     <mat-form-field>
                         <input matInput type="text" placeholder="Unité" [(ngModel)]="unit">
                     </mat-form-field>
@@ -32,7 +31,8 @@
                     <mat-list-item *ngFor="let ingredient of ingredients">
                         <div class="ContentIngredients">
                             <p>{{ingredient.name}}
-                                <span class="InfoQuantity" id="quantity"> {{ingredient.quantity}}</span><span class="InfoUnity">{{ingredient.unit}}</span>
+                                <span class="InfoQuantity" id="quantity"> {{ingredient.quantity}}</span>
+                                <span class="InfoUnity">{{ingredient.unit}}</span>
                             </p>
                         </div>
                         <div class="buttonIngredients">

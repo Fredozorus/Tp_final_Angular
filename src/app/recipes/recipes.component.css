@@ -1,0 +1,12 @@
+mat-card {
+    margin : 20px;
+}
+
+.AddRecipeButton {
+    float: right;
+}
+
+.mat-mini-fab {
+    background-color: #3F51B5;
+    color: white;
+}
