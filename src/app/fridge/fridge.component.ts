@@ -17,11 +17,22 @@ export class FridgeComponent implements OnInit {
 
 
 
+
+
   constructor(private fridgeservice: FridgeService) { }
 
   ngOnInit() {
     this.ingredients = this.fridgeservice.GetAll();
   }
+
+  getQuantityIngredients(){
+    return this.quantity;
+  }
+
+  setQuantityIngredients(_quantity : number) {
+    this.quantity = _quantity;
+  }
+
 
   AddIngredients() {
     if (this.name) {

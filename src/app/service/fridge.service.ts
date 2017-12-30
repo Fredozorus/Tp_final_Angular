@@ -39,9 +39,10 @@ export class FridgeService {
   EditIngredients(ingredient: Ingredients){
     const idx = this.ingredients.indexOf(ingredient);
     if(idx> -1 ){
-      var changeQuantity = prompt("Entrez la nouvelle quantité");
+      var input = prompt("Entrez la nouvelle quantité");
+       var changeQuantity = parseInt(input);
       if (changeQuantity != null) {
-          document.getElementById("quantity").innerHTML = changeQuantity;
+        this.ingredients[idx].quantity = changeQuantity;
       }
     }
   }
