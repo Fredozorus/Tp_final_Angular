@@ -32,11 +32,11 @@
                     <mat-list-item *ngFor="let ingredient of ingredients">
                         <div class="ContentIngredients">
                             <p>{{ingredient.name}}
-                                <span class="InfoIngredients"> {{ingredient.quantity}}{{ingredient.unit}}</span>
+                                <span class="InfoQuantity" id="quantity"> {{ingredient.quantity}}</span><span class="InfoUnity">{{ingredient.unit}}</span>
                             </p>
                         </div>
                         <div class="buttonIngredients">
-                            <button mat-button>
+                            <button mat-button (click)="EditIngredients(ingredient)">
                                 <mat-icon>edit</mat-icon>
                             </button>
                             <button mat-button (click)="RemoveIngredients(ingredient)">

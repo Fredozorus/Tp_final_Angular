@@ -33,7 +33,7 @@ mat-card {
     align-items: right;
 }
 
-.InfoIngredients{
+.InfoQuantity, .InfoUnity{
     font-size: 12px;
     color: grey;
 }

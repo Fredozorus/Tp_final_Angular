@@ -35,7 +35,9 @@ export class FridgeComponent implements OnInit {
 
   RemoveIngredients(ingredient: Ingredients){
     this.fridgeservice.RemoveIngredients(ingredient);
-
   }
-
+  
+EditIngredients(ingredient : Ingredients){
+  this.fridgeservice.EditIngredients(ingredient);
+}
 }

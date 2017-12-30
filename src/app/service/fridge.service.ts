@@ -34,7 +34,16 @@ export class FridgeService {
     }else {
       console.log("Ingredients not found " +  ingredient.name)
     }
+  }
 
+  EditIngredients(ingredient: Ingredients){
+    const idx = this.ingredients.indexOf(ingredient);
+    if(idx> -1 ){
+      var changeQuantity = prompt("Entrez la nouvelle quantité");
+      if (changeQuantity != null) {
+          document.getElementById("quantity").innerHTML = changeQuantity;
+      }
+    }
   }
 
 
