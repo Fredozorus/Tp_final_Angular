@@ -15,6 +15,22 @@
                         <input matInput type="Textarea" placeholder="Description">
                     </mat-form-field>
                     <br>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Ajouter ingrédients
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Entrez les ingrédients de votre recette
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <mat-form-field>
+                                <input matInput placeholder="Ingrédients">
+                              </mat-form-field>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <br>
                     <button mat-button>
                         <mat-icon>image</mat-icon>
                         <label> Ajouter une image</label>
@@ -33,12 +49,10 @@
     <div class="Item item-2" fxFlex="70%" fxFlexOrder="2">
         <mat-card>
             <mat-card-content>
-                    <mat-card-title>Recettes</mat-card-title>
+                <mat-card-title>Recettes</mat-card-title>
                 <mat-card-header>
                 </mat-card-header>
             </mat-card-content>
         </mat-card>
     </div>
 </div>
-
-

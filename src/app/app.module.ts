@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
 import {RouterModule} from '@angular/router';
 import {Routes} from '@angular/router';
@@ -53,6 +54,7 @@ const appRoutes : Routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatExpansionModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

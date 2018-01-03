@@ -1,5 +1,5 @@
 import { Injectable,EventEmitter} from '@angular/core';
-import { Ingredients } from '../models/ingredients';
+import { Ingredients } from '../../models/ingredients'
 import { Console } from '@angular/core/src/console';
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FridgeService } from '../service/fridge.service';
+import { FridgeService } from '../service//fridge/fridge.service';
 import { Ingredients } from '../models/ingredients';
 @Component({
   selector: 'app-fridge',
