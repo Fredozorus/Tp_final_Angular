@@ -2,7 +2,7 @@ mat-card {
     margin : 20px;
 }
 
-.AddRecipeButton {
+.AddRecipeButton, .AddIngredientInRecipe {
     float: right;
 }
 
@@ -10,3 +10,4 @@ mat-card {
     background-color: #3F51B5;
     color: white;
 }
+

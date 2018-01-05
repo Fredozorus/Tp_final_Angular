@@ -32,7 +32,7 @@ export class FridgeService {
       this.ingredients.splice(idx,1);
       this.ingredientsChanged.emit();
     }else {
-      console.log("Ingredients not found " +  ingredient.name)
+      console.log("Ingredients not found :  " +  ingredient.name)
     }
   }
 

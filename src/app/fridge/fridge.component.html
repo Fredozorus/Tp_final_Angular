@@ -36,12 +36,13 @@
                             </p>
                         </div>
                         <div class="buttonIngredients">
-                            <button mat-button (click)="EditIngredients(ingredient)">
+                            <button mat-button (click)="EditIngredients(ingredient)" ng-model="myVar" ng-init="myVar =true">
                                 <mat-icon>edit</mat-icon>
                             </button>
                             <button mat-button (click)="RemoveIngredients(ingredient)">
                                 <mat-icon>delete</mat-icon>
                             </button>
+                            
                         </div>
                     </mat-list-item>
                 </mat-list>
