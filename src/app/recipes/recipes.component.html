@@ -8,7 +8,7 @@
                         <input matInput type="text" placeholder="Nom" [(ngModel)]="name">
                     </mat-form-field>
                     <mat-form-field>
-                        <textarea matInput type="Textarea" placeholder="Description"></textarea>
+                        <textarea matInput type="Textarea" placeholder="Description" [(ngModel)]="description"></textarea>
                     </mat-form-field>
                     <br>
                     <mat-accordion>
@@ -42,7 +42,7 @@
                         <mat-expansion-panel>
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                    Ingrédients ajouté
+                                    Ingrédients ajoutés
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
                         </mat-expansion-panel>
@@ -67,8 +67,27 @@
         <mat-card>
             <mat-card-content>
                 <mat-card-title>Recettes</mat-card-title>
-                <mat-card-header>
-                </mat-card-header>
+                <mat-card class="RecetteCard" *ngFor="let recipe of recipes">
+                    <mat-card-header>
+                        <mat-card-title>
+                          {{recipe.name}} 
+                        </mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src={{recipe.image}}
+                            alt="Photo recette">
+                    <mat-card-content>
+                        <p>{{recipe.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-icon-button>
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="RemoveRecipes(recipe)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
             </mat-card-content>
         </mat-card>
     </div>

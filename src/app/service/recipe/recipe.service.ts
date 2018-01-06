@@ -6,7 +6,8 @@ import { EventEmitter } from 'events';
 export class RecipeService {
 
 recipes : Recipes[] = [
-  {name: 'Crepes', description: 'description des crêpes',image: 'mypath',ingredientList: ['farine','oeufs','lait']}
+  {name: 'Crêpes', description: 'description des crêpes' , image: 'http://static.750g.com/images/660-auto/b4d7474a061a440ae4108e179c903426/crepes-rapides-pour-la-chandeleur.jpg'},
+  {name: 'Donuts', description: 'description des donuts', image:'https://timedotcom.files.wordpress.com/2017/05/170602-free-donut-day.jpg'}
 ];
 
 

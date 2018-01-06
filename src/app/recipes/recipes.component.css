@@ -11,3 +11,7 @@ mat-card {
     color: white;
 }
 
+.RecetteCard{
+   width: 350px;
+   margin: none;
+}
