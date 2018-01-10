@@ -48,12 +48,10 @@
                         </mat-expansion-panel>
                     </mat-accordion>
                     <br>
-                    <button mat-button>
-                        <mat-icon>image</mat-icon>
-                        <label> Ajouter une image</label>
-                    </button>
+                    <input type="file"  id="recipe_pic" class="recipeinput" name="recipe_pic" accept=".jpg, .jpeg, .png" (change)="Upload()">
+                    <label for="recipe_pic" class="label_pic">Choisir une image..</label>
                     <div class="AddRecipeButton">
-                        <button mat-mini-fab mat>
+                        <button mat-mini-fab mat (click)="AddRecipes()">
                             <mat-icon>add</mat-icon>
                         </button>
                     </div>
@@ -70,11 +68,10 @@
                 <mat-card class="RecetteCard" *ngFor="let recipe of recipes">
                     <mat-card-header>
                         <mat-card-title>
-                          {{recipe.name}} 
+                            {{recipe.name}}
                         </mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image src={{recipe.image}}
-                            alt="Photo recette">
+                    <img mat-card-image src={{recipe.image}} alt="Photo recette">
                     <mat-card-content>
                         <p>{{recipe.description}}
                         </p>
