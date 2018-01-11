@@ -1,1 +1,53 @@
-<p> Hello Shopping</p>
+<div class="container" fxLayout fxlayout.xs="column" fxLayoutAlign="center" fxLayoutGape.xs="0">
+    <div class="item item-1" fxFlex="30%">
+        <mat-card>
+            <mat-card-title>Ajouter une liste de course</mat-card-title>
+            <mat-card-content>
+                <div class="AddShoppingList">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Nom">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <textarea matInput type="Textarea" placeholder="Contenu"></textarea>
+                    </mat-form-field>
+                    <br>
+                </div>
+                <div class="AddShoppingListButton">
+                        <button mat-mini-fab mat >
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+    <div class="Item item-2" fxFlex="70%" fxFlexOrder="2">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Liste de Courses</mat-card-title>
+                <mat-card class="RecetteCard">
+                    <mat-card-header>
+                        <mat-card-title>
+                           Ma Liste de course
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>
+                            Oeufs, Farine, Beurre
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-icon-button>
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button >
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

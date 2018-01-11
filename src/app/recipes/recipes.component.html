@@ -48,7 +48,7 @@
                         </mat-expansion-panel>
                     </mat-accordion>
                     <br>
-                    <input type="file"  id="recipe_pic" class="recipeinput" name="recipe_pic" accept=".jpg, .jpeg, .png" (change)="Upload()">
+                    <input [(ngModel)]="image" type="file"  id="recipe_pic" class="recipeinput" name="recipe_pic" accept=".jpg, .jpeg, .png" >
                     <label for="recipe_pic" class="label_pic">Choisir une image..</label>
                     <div class="AddRecipeButton">
                         <button mat-mini-fab mat (click)="AddRecipes()">

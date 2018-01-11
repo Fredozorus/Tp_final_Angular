@@ -6,5 +6,5 @@ import { SafeUrl } from "@angular/platform-browser/src/security/dom_sanitization
 export interface Recipes {
     name: string;
     description: string;
-    image: SafeUrl;
+    image: string;
 }

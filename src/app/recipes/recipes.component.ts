@@ -18,7 +18,7 @@ export class RecipesComponent implements OnInit {
 
   name: string;
   description : string;
-  image: SafeUrl;
+  image: string;
   //ingredientList: Ingredients[];
 
   constructor( private recipeservice: RecipeService, private sanitizer : DomSanitizer) { }
@@ -48,7 +48,7 @@ export class RecipesComponent implements OnInit {
   }
 
   Upload(){
-     this.image = this.sanitizer.bypassSecurityTrustUrl(((<HTMLInputElement>document.getElementById("recipe_pic")).value));
+   //  this.image = this.sanitizer.bypassSecurityTrustUrl(((<HTMLInputElement>document.getElementById("recipe_pic")).value));
     // cett méthode est lié à mon input 
   }
 

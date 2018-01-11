@@ -1,0 +1,24 @@
+mat-card {
+    margin : 20px;
+}
+
+.AddShoppingListButton{
+    float: right;
+}
+
+.mat-mini-fab {
+    background-color: #3F51B5;
+    color: white;
+}
+
+
+.AddShoppingList{
+    display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.ShoppingListCard{
+   width: 350px;
+   margin: none;
+}
+
