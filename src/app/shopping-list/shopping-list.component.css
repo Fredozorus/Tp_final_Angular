@@ -7,9 +7,14 @@ mat-card {
 }
 
 .buttonItem {
-    margin-left : 90%;
+    align-content: right;
+    align-items: right;
+    margin-left : 85%;
 }
 
+mat-checkbox{
+   color: #3F51B5;
+}
 .mat-mini-fab {
     background-color: #3F51B5;
     color: white;
