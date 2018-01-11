@@ -6,11 +6,19 @@ mat-card {
     float: right;
 }
 
+.buttonItem {
+    margin-left : 90%;
+}
+
 .mat-mini-fab {
     background-color: #3F51B5;
     color: white;
 }
 
+
+.listitemshopping{
+    color : black;
+}
 
 .AddShoppingList{
     display: flex;
@@ -18,7 +26,7 @@ mat-card {
   width: 100%;
 }
 .ShoppingListCard{
-   width: 350px;
+   width: 200px;
    margin: none;
 }
 
