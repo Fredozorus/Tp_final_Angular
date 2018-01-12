@@ -24,6 +24,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { HeaderComponent } from './header/header.component';
 import {FormsModule} from '@angular/forms';
 import { EditFridgeComponent } from './fridge/edit-fridge/edit-fridge.component';
+import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 
 const appRoutes : Routes = [
   { path: 'Frigo', component: FridgeComponent},
@@ -42,7 +43,8 @@ const appRoutes : Routes = [
     ShoppingListComponent,
     RecipesComponent,
     HeaderComponent,
-    EditFridgeComponent
+    EditFridgeComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,6 @@ const appRoutes : Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents : [EditFridgeComponent]
+  entryComponents : [EditFridgeComponent, EditRecipeComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<h3 mat-dialog-title>
+  Modifier Recette</h3>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Nom" [(ngModel)]="name" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Quantité"  [(ngModel)]="description">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Unité"  [(ngModel)]="image">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button [mat-dialog-close]="[name, description, image]" (click)="onClickRecipeYes()">Yes</button>
+</mat-dialog-actions>

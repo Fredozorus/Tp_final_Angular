@@ -6,6 +6,8 @@ import { FridgeService } from '../service/fridge/fridge.service';
 import { Sanitizer } from '@angular/core/src/security';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SafeUrl } from '@angular/platform-browser/src/security/dom_sanitization_service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {EditRecipeComponent} from '../recipes/edit-recipe/edit-recipe.component';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -21,7 +23,7 @@ export class RecipesComponent implements OnInit {
   image: string;
   //ingredientList: Ingredients[];
 
-  constructor( private recipeservice: RecipeService, private sanitizer : DomSanitizer) { }
+  constructor( private recipeservice: RecipeService, private sanitizer : DomSanitizer, public dialog: MatDialog) { }
   
 
   ngOnInit() {
@@ -47,7 +49,24 @@ export class RecipesComponent implements OnInit {
   RemoveRecipes( recipe: Recipes){
     this.recipeservice.RemoveRecipes(recipe);
   }
+  openDialogRecipeEdit(recipe: Recipes): void {
+    console.log(recipe);
+    let dialogRef = this.dialog.open(EditRecipeComponent, {
+      width: '250px',
+      data: {recipe}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      const idx = this.recipes.indexOf(recipe);
+      this.recipes[idx].name = result[0];
+      this.recipes[idx].description = result[1];
+      this.recipes[idx].image = result[2];
+    
+  });
+
+
+  }
   EditRecipe(recipe:Recipes){
     this.recipeservice.EditDescription(recipe);
   }
