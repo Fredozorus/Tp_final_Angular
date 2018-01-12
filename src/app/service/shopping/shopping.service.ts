@@ -4,7 +4,8 @@ import {Shopping} from '../../models/shopping';
 @Injectable()
 export class ShoppingService {
   shoppingListItems: Shopping[] = [
-    {name:'Poulet'}
+    {name:'Poulet',
+    checked: false}
   ];
 
   GetAll(){
@@ -18,7 +19,12 @@ export class ShoppingService {
     this.shoppingListChanged.emit();
   }
 
-  RemoveIngredients(shoppingListItem: Shopping){
+Checked (shoppingListItem: Shopping){
+  
+}
+
+
+  RemoveItem(shoppingListItem: Shopping){
     const idx = this.shoppingListItems.indexOf(shoppingListItem);
     if(idx > -1){
       this.shoppingListItems.splice(idx,1);

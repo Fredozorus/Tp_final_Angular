@@ -1,4 +1,4 @@
 export interface Shopping {
     name: string;
-    //checked : boolean;
+    checked : boolean;
 }

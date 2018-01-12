@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FridgeService } from '../service/fridge/fridge.service';
+import {EditFridgeComponent} from '../fridge/edit-fridge/edit-fridge.component';
 import { Ingredients } from '../models/ingredients';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 @Component({
   selector: 'app-fridge',
   templateUrl: './fridge.component.html',
@@ -16,10 +19,7 @@ export class FridgeComponent implements OnInit {
   unit: string;
 
 
-
-
-
-  constructor(private fridgeservice: FridgeService) { }
+  constructor(private fridgeservice: FridgeService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.ingredients = this.fridgeservice.GetAll();
@@ -41,6 +41,28 @@ export class FridgeComponent implements OnInit {
   RemoveIngredients(ingredient: Ingredients){
     this.fridgeservice.RemoveIngredients(ingredient);
   }
+
+
+  openDialog(ingredient: Ingredients): void {
+    console.log(ingredient);
+    let dialogRef = this.dialog.open(EditFridgeComponent, {
+      width: '250px',
+      data: {ingredient}
+    });
+
+   
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        const idx = this.ingredients.indexOf(ingredient);
+        this.ingredients[idx].name = result[0];
+        this.ingredients[idx].quantity = result[1];
+        this.ingredients[idx].unit = result[2];
+      
+    });
+  }
+  
+
+  
   
 EditIngredients(ingredient : Ingredients){
   this.fridgeservice.EditIngredients(ingredient);

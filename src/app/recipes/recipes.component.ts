@@ -28,12 +28,17 @@ export class RecipesComponent implements OnInit {
     this.recipes = this.recipeservice.GetAll();
   }
 
+  getFile(event){ 
+    this.image = event.target.files[0].name;
+} 
+
   AddRecipes(){
     if(this.name){
       this.recipeservice.AddRecipes({
         name: this.name,
         description: this.description,
-        image: this.image // n'affiche pas la photo de la recette ici
+        image: this.image,
+         // n'affihe pas la photo de la recette ici
         //ingredientList: this.ingredientList[]
       });
     }
@@ -45,11 +50,6 @@ export class RecipesComponent implements OnInit {
 
   EditRecipe(recipe:Recipes){
     this.recipeservice.EditDescription(recipe);
-  }
-
-  Upload(){
-   //  this.image = this.sanitizer.bypassSecurityTrustUrl(((<HTMLInputElement>document.getElementById("recipe_pic")).value));
-    // cett méthode est lié à mon input 
   }
 
 }

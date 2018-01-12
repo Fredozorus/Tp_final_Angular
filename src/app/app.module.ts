@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -22,6 +23,7 @@ import {Routes} from '@angular/router';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HeaderComponent } from './header/header.component';
 import {FormsModule} from '@angular/forms';
+import { EditFridgeComponent } from './fridge/edit-fridge/edit-fridge.component';
 
 const appRoutes : Routes = [
   { path: 'Frigo', component: FridgeComponent},
@@ -39,7 +41,8 @@ const appRoutes : Routes = [
     PlanningComponent,
     ShoppingListComponent,
     RecipesComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditFridgeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ const appRoutes : Routes = [
     MatListModule,
     MatCardModule,
     MatIconModule,
+    MatDialogModule,
     FlexLayoutModule,
     MatFormFieldModule,
     MatSelectModule,
@@ -58,6 +62,7 @@ const appRoutes : Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [EditFridgeComponent]
 })
 export class AppModule { }
