@@ -25,7 +25,9 @@
             <mat-card-content>
                 <mat-list>
                     <mat-list-item *ngFor="let shoppingListItem of shoppingListItems" class="listitemshopping">
+                        <div class ="ContentShoppingItem">
                         <span>{{shoppingListItem.name}} </span>
+                    </div>
                         <div class="buttonItem">
                             <mat-checkbox class="checkboxItem" color="primary"></mat-checkbox>
                             <button mat-icon-button (click)="RemoveItem(shoppingListItem)">

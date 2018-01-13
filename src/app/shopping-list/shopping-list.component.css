@@ -6,10 +6,12 @@ mat-card {
     float: right;
 }
 
+.ContentShoppingItem{
+width: 20%;
+}
+
 .buttonItem {
-    align-content: right;
-    align-items: right;
-    margin-left : 85%;
+    margin-left : 73%;
 }
 
 .checkboxItem{

@@ -1,0 +1,15 @@
+.imageEditInput{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.label_picEdit, .imageEditInput{
+    font-size: 16px;
+    color:black;
+    display: inline-block;
+    cursor: pointer;
+}

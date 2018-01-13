@@ -29,6 +29,10 @@ export class EditRecipeComponent implements OnInit {
       this.image = this.recipe.image;
     }
 
+    getFile(event){ 
+      this.image = event.target.files[0].name;
+  } 
+
     onNoClick(): void {
       this.dialogRef.close();
     }

@@ -40,7 +40,6 @@ export class RecipesComponent implements OnInit {
         name: this.name,
         description: this.description,
         image: this.image,
-         // n'affihe pas la photo de la recette ici
         //ingredientList: this.ingredientList[]
       });
     }
@@ -66,9 +65,6 @@ export class RecipesComponent implements OnInit {
   });
 
 
-  }
-  EditRecipe(recipe:Recipes){
-    this.recipeservice.EditDescription(recipe);
   }
 
 }

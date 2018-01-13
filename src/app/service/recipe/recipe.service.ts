@@ -34,14 +34,6 @@ RemoveRecipes(recipe: Recipes){
 }
 
 
-EditDescription(recipe: Recipes){
-  const idx = this.recipes.indexOf(recipe);
-  let mydescription: string;
-  if(idx >-1){
-    this.recipes[idx].description = mydescription;
-  }
-}
-
  
   constructor() { }
 
