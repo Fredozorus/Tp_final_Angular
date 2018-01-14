@@ -1,0 +1,31 @@
+
+
+
+p {
+    font-weight:bold;    
+    margin-left:  20px;
+    margin-right: 20px;
+  }
+  
+  pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+  }
+
+mat-card {
+  margin: 20px;
+}
+
+.hearder{
+  height: 100%;
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom{
+  margin-left: 40%;
+  justify-content: center;
+  align-content: center;
+}

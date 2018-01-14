@@ -4,7 +4,7 @@ import {Shopping} from '../../models/shopping';
 @Injectable()
 export class ShoppingService {
   shoppingListItems: Shopping[] = [
-    {name:'Poulet',
+    {name:'Poulet',quantity: 1,unit: 'kg',
     checked: false}
   ];
 

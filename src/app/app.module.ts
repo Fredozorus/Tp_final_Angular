@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FridgeComponent } from './fridge/fridge.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 import { PlanningComponent } from './planning/planning.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -28,6 +29,7 @@ import { EditFridgeComponent } from './fridge/edit-fridge/edit-fridge.component'
 import { CalendarModule } from 'angular-calendar';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { DemoUtilsModule } from '../../node_modules/angular-calendar/demos/demo-modules/demo-utils/module';
 
 const appRoutes : Routes = [
   { path: 'Frigo', component: FridgeComponent},
@@ -65,6 +67,8 @@ const appRoutes : Routes = [
     MatInputModule,
     MatDatepickerModule,
     MatExpansionModule,
+    DemoUtilsModule,
+    MatNativeDateModule,
     NgbModalModule.forRoot(),
     CalendarModule.forRoot(),
     RouterModule.forRoot(appRoutes)

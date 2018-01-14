@@ -10,8 +10,17 @@ mat-card {
 width: 20%;
 }
 
+.InfoIngredientShoppingList{
+    font-size: 12px;
+    color: grey;
+}
+
 .buttonItem {
-    margin-left : 73%;
+    margin-left : 65%;
+}
+
+.ButtonSendFridge{
+    margin-left: 81.5%;
 }
 
 .checkboxItem{

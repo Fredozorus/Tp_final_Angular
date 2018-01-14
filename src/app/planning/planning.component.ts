@@ -21,6 +21,9 @@ import {
   isSameMonth,
   addHours
 } from 'date-fns';
+import{RecipeService} from '../service/recipe/recipe.service';
+import {RecipesComponent} from '../recipes/recipes.component';
+import {Recipes} from '../models/recipes';
 
 const colors: any = {
   red: {
@@ -41,7 +44,8 @@ const colors: any = {
   selector: 'app-planning',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './planning.component.html',
-  styleUrls: ['./planning.component.css']
+  styleUrls: ['./planning.component.css'],
+  providers: [RecipeService]
 })
 export class PlanningComponent  {
 
@@ -75,42 +79,13 @@ export class PlanningComponent  {
   refresh: Subject<any> = new Subject();
 
   events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: new Date(),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
+
   ];
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal, private recipeservice: RecipeService) {}
+  recipes : Recipes[];
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -146,13 +121,7 @@ export class PlanningComponent  {
     this.events.push({
       title: 'New event',
       start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
       color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
     });
     this.refresh.next();
   }

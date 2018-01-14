@@ -1,7 +1,7 @@
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
     <h5 class="modal-title">Event action occurred</h5>
-    <button type="button" class="close" >
+    <button type="button" class="close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -16,152 +16,106 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" >OK</button>
+    <button matButton type="button" class="btn btn-outline-secondary">OK</button>
   </div>
 </ng-template>
+<mat-card>
+  <mat-card-content>
+    <div class="hearder">
+      <div mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+        <button mat-raised-button>Previous</button>
+      </div>
+      <div mwlCalendarToday [(viewDate)]="viewDate">
+        <button mat-raised-button>Today</button>
+      </div>
+      <div mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+        <button mat-raised-button>Next</button>
+      </div>
 
-<div class="row text-center">
-  <div class="col-md-4">
-    <div class="btn-group">
-      <div
-        class="btn btn-primary"
-        mwlCalendarPreviousView
-        [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="activeDayIsOpen = false">
-        Previous
+
+
+      <p>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</p>
+
+
+      <div class="btn-primary" (click)="view = 'month'" [class.active]="view === 'month'">
+        <button mat-raised-button>Month</button>
       </div>
-      <div
-        class="btn btn-outline-secondary"
-        mwlCalendarToday
-        [(viewDate)]="viewDate">
-        Today
+      <div (click)="view = 'week'" [class.active]="view === 'week'">
+        <button mat-raised-button>Week</button>
       </div>
-      <div
-        class="btn btn-primary"
-        mwlCalendarNextView
-        [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="activeDayIsOpen = false">
-        Next
+      <div (click)="view = 'day'" [class.active]="view === 'day'">
+        <button mat-raised-button>Day</button>
       </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
-  </div>
-  <div class="col-md-4">
-    <div class="btn-group">
-      <div
-        class="btn btn-primary"
-        (click)="view = 'month'"
-        [class.active]="view === 'month'">
-        Month
-      </div>
-      <div
-        class="btn btn-primary"
-        (click)="view = 'week'"
-        [class.active]="view === 'week'">
-        Week
-      </div>
-      <div
-        class="btn btn-primary"
-        (click)="view = 'day'"
-        [class.active]="view === 'day'">
-        Day
-      </div>
-    </div>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>
 <br>
+<mat-card>
+  <mat-card-content>
 <div [ngSwitch]="view">
-  <mwl-calendar-month-view
-    *ngSwitchCase="'month'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    [activeDayIsOpen]="activeDayIsOpen"
-    (dayClicked)="dayClicked($event.day)"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
+  <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-month-view>
-  <mwl-calendar-week-view
-    *ngSwitchCase="'week'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
+  <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
     (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-week-view>
-  <mwl-calendar-day-view
-    *ngSwitchCase="'day'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
+  <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
     (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-day-view>
 </div>
+</mat-card-content>
+</mat-card>
 
-<br><br><br>
+<br>
+<br>
+<br>
 
-<h3>
-  Edit events
-  <button
-    class="btn btn-primary pull-right"
-    (click)="addEvent()">
-    Add new
-  </button>
-  <div class="clearfix"></div>
-</h3>
-
-<table class="table table-bordered">
-
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Primary color</th>
-      <th>Secondary color</th>
-      <th>Starts at</th>
-      <th>Ends at</th>
-      <th>Remove</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let event of events; let index = index">
-      <td>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="event.title"
-          (keyup)="refresh.next()">
-      </td>
-      <td>
-        <input
-          type="color"
-          [(ngModel)]="event.color.primary"
-          (change)="refresh.next()">
-      </td>
-      <td>
-        <input
-          type="color"
-          [(ngModel)]="event.color.secondary"
-          (change)="refresh.next()">
-      </td>
-      <td>
-            
-      </td>
-      <td>
-      </td>
-      <td>
-        <button
-          class="btn btn-danger"
-          (click)="events.splice(index, 1); refresh.next()">
-          Delete
+<mat-card>
+  <mat-card-content>
+    <div class="bottom">
+      <h3>
+        Edit events
+        <button mat-raised-button class="btn btn-primary pull-right" (click)="addEvent()">
+          Add new
         </button>
-      </td>
-    </tr>
-  </tbody>
+        <div class="clearfix"></div>
+      </h3>
+      <br>
 
-</table>
+      <table class="table table-bordered">
+
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th></th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let event of events; let index = index">
+            <td>
+              <input matInput type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()">
+            </td>
+            <td>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="event.start" (ngModelChange)="refresh.next()" placeholder="Date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </td>
+            <td>
+            </td>
+            <td>
+              <button mat-raised-button class="btn btn-danger" (click)="events.splice(index, 1); refresh.next()">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
