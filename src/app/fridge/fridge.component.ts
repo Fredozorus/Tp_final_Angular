@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FridgeService } from '../service/fridge/fridge.service';
-import {EditFridgeComponent} from '../fridge/edit-fridge/edit-fridge.component';
+import { EditFridgeComponent } from '../fridge/edit-fridge/edit-fridge.component';
 import { Ingredients } from '../models/ingredients';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-fridge',
@@ -25,8 +25,6 @@ export class FridgeComponent implements OnInit {
     this.ingredients = this.fridgeservice.GetAll();
   }
 
- 
-
 
   AddIngredients() {
     if (this.name) {
@@ -38,33 +36,26 @@ export class FridgeComponent implements OnInit {
     }
   }
 
-  RemoveIngredients(ingredient: Ingredients){
+  RemoveIngredients(ingredient: Ingredients) {
     this.fridgeservice.RemoveIngredients(ingredient);
   }
 
 
-  openDialog(ingredient: Ingredients): void {
-    console.log(ingredient);
+  //Ouvre la fenêtre de modification
+  openEditDialog(ingredient: Ingredients): void {
     let dialogRef = this.dialog.open(EditFridgeComponent, {
       width: '250px',
-      data: {ingredient}
+      data: { ingredient }
     });
 
-   
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-        const idx = this.ingredients.indexOf(ingredient);
-        this.ingredients[idx].name = result[0];
-        this.ingredients[idx].quantity = result[1];
-        this.ingredients[idx].unit = result[2];
-      
+      //Après la fermeture de la fenêtre
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      const idx = this.ingredients.indexOf(ingredient);
+      this.ingredients[idx].name = result[0];
+      this.ingredients[idx].quantity = result[1];
+      this.ingredients[idx].unit = result[2];
     });
   }
-  
 
-  
-  
-EditIngredients(ingredient : Ingredients){
-  this.fridgeservice.EditIngredients(ingredient);
-}
 }

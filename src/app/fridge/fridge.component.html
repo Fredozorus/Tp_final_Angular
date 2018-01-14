@@ -3,7 +3,7 @@
         <mat-card>
             <mat-card-title>Ajouter un ingrédient</mat-card-title>
             <mat-card-content>
-                <div class="AddIngredientsForm">
+                <div class="addIngredientsForm">
                     <mat-form-field>
                         <input matInput type="text" placeholder="Nom" [(ngModel)]="name">
                     </mat-form-field>
@@ -29,20 +29,19 @@
                 <mat-card-title>Ingrédients</mat-card-title>
                 <mat-list>
                     <mat-list-item *ngFor="let ingredient of ingredients">
-                        <div class="ContentIngredients">
+                        <div class="contentIngredients">
                             <p>{{ingredient.name}}
-                                <span class="InfoQuantity" id="quantity"> {{ingredient.quantity}}</span>
-                                <span class="InfoUnity">{{ingredient.unit}}</span>
+                                <span class="infoQuantity" > {{ingredient.quantity}}</span>
+                                <span class="infoUnity">{{ingredient.unit}}</span>
                             </p>
                         </div>
                         <div class="buttonIngredients">
-                            <button mat-icon-button (click)="openDialog(ingredient)" >
+                            <button mat-icon-button (click)="openEditDialog(ingredient)" >
                                 <mat-icon>edit</mat-icon>
                             </button>
                             <button mat-icon-button (click)="RemoveIngredients(ingredient)">
                                 <mat-icon>delete</mat-icon>
                             </button>
-                            
                         </div>
                     </mat-list-item>
                 </mat-list>

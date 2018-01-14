@@ -19,21 +19,17 @@ mat-card {
     margin-left: 50%;
 }
 
-.ContentIngredients{
+.contentIngredients{
     width : 40%;
 }
 
 
-.AddIngredientsForm{
+.addIngredientsForm{
     border: none;
 }
 
-.IngredientsCard{
-    width: 40%;
-    align-items: right;
-}
 
-.InfoQuantity, .InfoUnity{
+.infoQuantity, .infoUnity{
     font-size: 12px;
     color: grey;
 }

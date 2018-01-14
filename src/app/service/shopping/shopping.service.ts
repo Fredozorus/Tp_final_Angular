@@ -19,10 +19,6 @@ export class ShoppingService {
     this.shoppingListChanged.emit();
   }
 
-Checked (shoppingListItem: Shopping){
-  
-}
-
 
   RemoveItem(shoppingListItem: Shopping){
     const idx = this.shoppingListItems.indexOf(shoppingListItem);

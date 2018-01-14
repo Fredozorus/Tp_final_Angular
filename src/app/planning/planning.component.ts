@@ -21,9 +21,9 @@ import {
   isSameMonth,
   addHours
 } from 'date-fns';
-import{RecipeService} from '../service/recipe/recipe.service';
-import {RecipesComponent} from '../recipes/recipes.component';
-import {Recipes} from '../models/recipes';
+import { RecipeService } from '../service/recipe/recipe.service';
+import { RecipesComponent } from '../recipes/recipes.component';
+import { Recipes } from '../models/recipes';
 
 const colors: any = {
   red: {
@@ -47,7 +47,7 @@ const colors: any = {
   styleUrls: ['./planning.component.css'],
   providers: [RecipeService]
 })
-export class PlanningComponent  {
+export class PlanningComponent {
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
@@ -83,9 +83,11 @@ export class PlanningComponent  {
   ];
 
   activeDayIsOpen: boolean = true;
+  recipes: Recipes[];
 
-  constructor(private modal: NgbModal, private recipeservice: RecipeService) {}
-  recipes : Recipes[];
+  constructor(private modal: NgbModal, private recipeservice: RecipeService) {
+  }
+
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

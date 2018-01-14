@@ -23,7 +23,8 @@ export class RecipesComponent implements OnInit {
   image: string;
   //ingredientList: Ingredients[];
 
-  constructor( private recipeservice: RecipeService, private sanitizer : DomSanitizer, public dialog: MatDialog) { }
+  constructor( private recipeservice: RecipeService, private sanitizer : DomSanitizer, public dialog: MatDialog) { 
+  }
   
 
   ngOnInit() {

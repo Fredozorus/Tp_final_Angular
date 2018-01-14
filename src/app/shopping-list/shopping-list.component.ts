@@ -45,16 +45,18 @@ export class ShoppingListComponent implements OnInit {
     this.shoppingListItems[idx].checked = true;
   }
 
+
+  //work in progress
   AddToFridge(shoppingListItem : ShoppingListComponent){
     
-      this.shoppingListItems.forEach((shoppingListItem) => {
-        this.fridgeservice.AddIngredients(shoppingListItem);
+      //this.shoppingListItems.forEach((shoppingListItem) => {
+     //   this.fridgeservice.AddIngredients(shoppingListItem);
       
   
      
     }
    
-  }
+  //}
 
   RemoveItem(shoppingListItem: Shopping){
     this.shoppingservice.RemoveItem(shoppingListItem);

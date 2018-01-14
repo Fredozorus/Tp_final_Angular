@@ -52,18 +52,18 @@
 <br>
 <mat-card>
   <mat-card-content>
-<div [ngSwitch]="view">
-  <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
-    (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
-  </mwl-calendar-month-view>
-  <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
-  </mwl-calendar-week-view>
-  <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
-  </mwl-calendar-day-view>
-</div>
-</mat-card-content>
+    <div [ngSwitch]="view">
+      <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
+        (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-day-view>
+    </div>
+  </mat-card-content>
 </mat-card>
 
 <br>
@@ -73,6 +73,11 @@
 <mat-card>
   <mat-card-content>
     <div class="bottom">
+      <mat-form-field>
+        <mat-select placeholder="Ajouté une recette">
+          <mat-option value="option">{{recipes}}</mat-option>
+        </mat-select>
+      </mat-form-field>
       <h3>
         Edit events
         <button mat-raised-button class="btn btn-primary pull-right" (click)="addEvent()">

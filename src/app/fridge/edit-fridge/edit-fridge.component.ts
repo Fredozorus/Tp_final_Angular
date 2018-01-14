@@ -28,11 +28,10 @@ export class EditFridgeComponent implements OnInit {
       
      }
      
-
-
     onNoClick(): void {
       this.dialogRef.close();
     }
+    
     onClickYes(){
       console.log(this.name, this.quantity, this.unit, this.ingredient);
 
