@@ -18,5 +18,7 @@ https://angular-university.io/
  angular-calendar : 
  https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
 
+Recette : 
 
+Les photos de recettes doivent impérativement se trouver dans le dossier /assets/image afin de pouvoior être affichées, si une nouvelle image est ajoutées dans le fichier un redemarrage du serveur est nécessaire.
 
